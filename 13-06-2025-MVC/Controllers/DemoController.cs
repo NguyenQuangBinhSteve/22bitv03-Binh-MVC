@@ -2,7 +2,7 @@
 using _13_06_2025_MVC.Models;
 using Microsoft.AspNetCore.Mvc;
 
-public class Democontroller : Controller
+public class DemoController : Controller
 {
 	// host /Demo/ AAA
 	public IActionResult AAA()
@@ -18,7 +18,19 @@ public class Democontroller : Controller
 
 	public string ActionTest()
 	{
-		return "ActionTest OK";
+        return "ActionTest OK";
+    }
+
+	public ViewResult ActionIndex()
+	{
+		ViewBag.MyData = "Gửi từ ActionIndex!";
+        return View("MyView");
+    }
+    //host /Demo/MyView
+    public ViewResult MyView()
+	{
+        ViewBag.MyData = "Gửi từ ActionTest!";
+		return View("MyView");
     }
 }
 
